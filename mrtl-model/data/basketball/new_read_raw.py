@@ -255,9 +255,13 @@ if __name__ == '__main__':
         i += 1
         print()
         print(str(i) + '/' + str(n) + ' file being processed')
-        shot_logs_csv_file = open(os.path.join(args.input_dir, 'shots_fixed.csv'), "r")
-        add_game_log(file, game_logs, csv.reader(shot_logs_csv_file))
-        shot_logs_csv_file.close()
+
+        try:
+            shot_logs_csv_file = open(os.path.join(args.input_dir, 'shots_fixed.csv'), "r")
+            add_game_log(file, game_logs, csv.reader(shot_logs_csv_file))
+            shot_logs_csv_file.close()
+        except ValueError:
+            print("Decoding Json has failed")
 
     #     file = files[0]
     #     print(str(i) + '/' + str(n) + ' file being processed')
