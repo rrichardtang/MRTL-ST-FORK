@@ -263,7 +263,7 @@ if __name__ == '__main__':
         except ValueError:
             print("Decoding Json has failed")
 
-        if i == 99:
+        if i == 80:
             break
 
     #     file = files[0]
