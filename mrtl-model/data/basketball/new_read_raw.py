@@ -263,6 +263,9 @@ if __name__ == '__main__':
         except ValueError:
             print("Decoding Json has failed")
 
+        if i == 99:
+            break
+
     #     file = files[0]
     #     print(str(i) + '/' + str(n) + ' file being processed')
     #     shot_logs_csv_file = open(os.path.join(args.input_dir, 'shots_fixed.csv'), "r")
