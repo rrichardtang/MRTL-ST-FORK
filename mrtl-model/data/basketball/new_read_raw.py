@@ -254,9 +254,9 @@ if __name__ == '__main__':
     for file in files:
         i += 1
 
-        if i > 200:
+        if i > 100:
             break
-            
+
         print()
         print(str(i) + '/' + str(n) + ' file being processed')
 
