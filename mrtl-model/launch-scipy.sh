@@ -22,5 +22,6 @@ PROXY_ENABLED=YES
 
 K8S_DOCKER_IMAGE="ucsdets/scipy-ml-notebook:2022.1-stable"
 
-exec ${BASEDIR}/bin/launch.sh "$@"
+#exec ${BASEDIR}/bin/launch.sh "$@"
 
+exec /opt/launch-sh/bin/launch.sh "$@"
