@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 2 ]; then
+if ["$#" -ne 2]
+then
     echo "Missing arguments: root_dir, data_dir"
     exit 1
 fi

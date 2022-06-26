@@ -1,6 +1,6 @@
 import logging
 import os
-
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from config import config
@@ -21,11 +21,18 @@ def process_raw(fn, data_dir, train_percent, val_percent, fn_train, fn_val,
     train.reset_index()
     test.reset_index()
 
-    val, test = train_test_split(test,
-                                 train_size=(val_percent /
-                                             (1 - train_percent)),
-                                 random_state=seed,
-                                 stratify=test[['a', 'shoot_label']])
+#     val, test = train_test_split(test,
+#                                  train_size=(val_percent /
+#                                              (1 - train_percent)),
+#                                  random_state=seed,
+#                                  stratify=test[['a', 'shoot_label']])
+
+#     val.reset_index()
+#     test.reset_index()
+
+    val_test_split = np.array_split(test, 2)
+    val = val_test_split[0]
+    test = val_test_split[1]
     val.reset_index()
     test.reset_index()
 

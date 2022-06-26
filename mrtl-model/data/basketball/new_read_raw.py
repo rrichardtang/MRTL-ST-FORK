@@ -254,7 +254,7 @@ if __name__ == '__main__':
     for file in files:
         i += 1
 
-        if i > 100:
+        if i > 20:
             break
 
         print()

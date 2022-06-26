@@ -127,13 +127,16 @@ if args.type == 'multi' or args.type == 'fixed':
     multi.init_params(**hyper)
     multi.init_loaders(train_set, val_set)
     multi.train_and_evaluate(save_dir)
-
+    print("----------- FINISHED TRAINING ------------- ")
+    
     # Test
     # Create dataset
     test_set.calculate_pos(b, c)
     multi.model.load_state_dict(multi.best_model_dict)
     test_conf_matrix, test_acc, test_precision, test_recall, test_F1, test_out, test_labels = multi.test(
         test_set)
+    print("----------- CREATED DATASET ------------- ")
+    
 
     # Metrics
     results['best_epochs'].append(multi.best_epochs)
